@@ -11,20 +11,25 @@
         <tr>
             <th>ID</th>
             <th>Date</th>
+            <th>View</th>
         </tr>
         </thead>
         <tbody>
         <tr th:remove="all">
             <td>123</td>
             <td>2022-03-21</td>
+            <td><a href="#"></a>View</td>
         </tr>
         <tr th:remove="all">
             <td>12345</td>
             <td>2022-03-22</td>
+            <td><a href="#"></a>View</td>
         </tr>
         <tr th:each="register: ${registers}">
             <td th:text="${register.id}"> </td>
             <td th:text="${register.getDate()}"></td>
+            <td><a href="#" th:href="@{'/register/' + ${register.getId()} + '/show/'}">View</a></td>
+            <td></td>
         </tr>
         </tbody>
     </table>

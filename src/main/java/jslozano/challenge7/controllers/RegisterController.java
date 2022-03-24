@@ -7,17 +7,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class indexController {
+public class RegisterController {
     private final WeatherRegisterService registerService;
 
-    public indexController(WeatherRegisterService registerService) {
+    public RegisterController(WeatherRegisterService registerService) {
         this.registerService = registerService;
     }
+    @RequestMapping("register/{id}/show")
+    public String showById(@PathVariable Long id, Model model){
+        model.addAttribute("registers", registerService.findById(id));
 
-    @RequestMapping({"", "/"})
-    public String getRegisters(Model model){
-        model.addAttribute("registers", registerService.getRegisters());
-
-        return "index";
+        return "register/show";
     }
 }

@@ -1,10 +1,11 @@
 package jslozano.challenge7.service;
 
+import jslozano.challenge7.model.Location;
 import jslozano.challenge7.model.WeatherRegister;
 
 import java.util.Set;
 
 public interface WeatherRegisterService {
     Set<WeatherRegister> getRegisters();
-    // WeatherRegister findById(Long id);
+    WeatherRegister findById(Long id);
 }

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Register</title>
+</head>
+<body>
+<h3>Weather register information</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:remove="all">
+            <td>123</td>
+            <td>2022-03-21</td>
+        </tr>
+        <tr th:remove="all">
+            <td>12345</td>
+            <td>2022-03-22</td>
+        </tr>
+        <tr th:each="register: ${registers}">
+            <td th:text="${register.id}"> </td>
+            <td th:text="${register.getDate()}"></td>
+        </tr>
+        </tbody>
+    </table>
+<h3>Location information about the register</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>City</th>
+            <th>State</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:remove="all">
+            <td>79.84</td>
+            <td>80.15</td>
+            <td>New York</td>
+            <td>New York</td>
+        </tr>
+        <tr th:remove="all">
+            <td>45.84</td>
+            <td>69.54</td>
+            <td>Missouri</td>
+            <td>Kansas</td>
+        </tr>
+        <tr th:each="register: ${registers}">
+            <td th:text="${register.getLocation().getLat() + '°'}"> </td>
+            <td th:text="${register.getLocation().getLon() + '°'}"></td>
+            <td th:text="${register.getLocation().getCity()}"> </td>
+            <td th:text="${register.getLocation().getState()}"></td>
+        </tr>
+        </tbody>
+    </table>
+<h3>Temperatures information</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Temperature 1</th>
+            <th>Temperature 2</th>
+            <th>Temperature 3</th>
+            <th>Temperature 4</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:remove="all">
+            <td>79.14</td>
+            <td>80.15</td>
+            <td>99.43</td>
+            <td>85.43</td>
+        </tr>
+        <tr th:remove="all">
+            <td>81.23</td>
+            <td>97.34</td>
+            <td>88.88</td>
+            <td>85.32</td>
+        </tr>
+
+        <tr th:each="register: ${registers}">
+            <td th:text="${register.getTemperature.getTemperature1() + ' F'}"> </td>
+            <td th:text="${register.getTemperature.getTemperature2() + ' F'}"></td>
+            <td th:text="${register.getTemperature.getTemperature3() + ' F'}"> </td>
+            <td th:text="${register.getTemperature.getTemperature4() + ' F'}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

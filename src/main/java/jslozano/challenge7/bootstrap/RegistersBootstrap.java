@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -47,20 +48,29 @@ public class RegistersBootstrap implements ApplicationListener<ContextRefreshedE
         weatherRegister4.setDate(LocalDate.of(2022, 03, 24));
 
         Temperature temperature1 = new Temperature();
-        Double[] temperatures = {89.7, 84.3, 91.2, 93.1};
-        temperature1.setTemperatures(temperatures);
+        temperature1.setTemperature1(89.7);
+        temperature1.setTemperature2(84.3);
+        temperature1.setTemperature3(91.2);
+        temperature1.setTemperature4(93.1);
+
 
         Temperature temperature2 = new Temperature();
-        Double[] temperatures2 = {86.5, 81.3, 90.2, 88.1};
-        temperature2.setTemperatures(temperatures2);
+        temperature2.setTemperature1(86.5);
+        temperature2.setTemperature2(81.3);
+        temperature2.setTemperature3(90.2);
+        temperature2.setTemperature4(88.1);
 
         Temperature temperature3 = new Temperature();
-        Double[] temperatures3 = {86.00, 93.21, 90.2, 88.15};
-        temperature3.setTemperatures(temperatures3);
+        temperature3.setTemperature1(85.3);
+        temperature3.setTemperature2(99.3);
+        temperature3.setTemperature3(98.4);
+        temperature3.setTemperature4(96.3);
 
         Temperature temperature4 = new Temperature();
-        Double[] temperatures4 = {89.7, 84.3, 91.2, 93.1};
-        temperature4.setTemperatures(temperatures4);
+        temperature4.setTemperature1(93.5);
+        temperature4.setTemperature2(96.43);
+        temperature4.setTemperature3(88.32);
+        temperature4.setTemperature4(88.43);
 
 
         weatherRegister1.setTemperature(temperature1);
@@ -110,7 +120,6 @@ public class RegistersBootstrap implements ApplicationListener<ContextRefreshedE
         locations.add(location1);
         locations.add(location2);
         locations.add(location3);
-
 
         return locations;
     }
