@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Registers</title>
+</head>
+<body>
+<!--/*@thymesCar id="register" type="jslozano.challenge7.model.WeatherRegister" */-->
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:remove="all">
+            <td>123</td>
+            <td>2022-03-21</td>
+        </tr>
+        <tr th:remove="all">
+            <td>12345</td>
+            <td>2022-03-22</td>
+        </tr>
+        <tr th:each="register: ${registers}">
+            <td th:text="${register.id}"> </td>
+            <td th:text="${register.getDate()}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
