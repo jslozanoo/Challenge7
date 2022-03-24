@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -11,7 +12,7 @@ public class WeatherRegister {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date date;
+    private LocalDate date;
 
     @ManyToOne
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
@@ -28,11 +29,11 @@ public class WeatherRegister {
         this.id = id;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

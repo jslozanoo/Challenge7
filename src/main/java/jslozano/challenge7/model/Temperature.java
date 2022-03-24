@@ -1,7 +1,5 @@
 package jslozano.challenge7.model;
 
-import lombok.Data;
-
 import javax.persistence.*;
 
 @Entity
