@@ -14,9 +14,11 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class WeatherRegisterCommand {
     private Long id;
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "YYYY-MM-DD")
+
+    private String dateConverter;
+
     private LocalDate date;
+
     private TemperatureCommand temperature;
     private LocationCommand location;
 }

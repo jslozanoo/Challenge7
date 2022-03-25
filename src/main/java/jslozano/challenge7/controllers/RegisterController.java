@@ -33,6 +33,17 @@ public class RegisterController {
         WeatherRegisterCommand savedCommand = registerService.saveRegisterCommand(command);
 
         return "redirect:/register/" + savedCommand.getId() + "/show";
+    }
+    @RequestMapping("register/{id}/update")
+    public String updateRegister(@PathVariable Long id, Model model){
+        model.addAttribute("register", registerService.findCommandById(id));
 
+        return "register/registerform";
+    }
+    @RequestMapping("register/{id}/delete")
+    public String deleteById(@PathVariable Long id){
+        registerService.deleteById(id);
+
+        return "redirect:/";
     }
 }

@@ -8,8 +8,9 @@
     <form th:object="${register}" th:action="@{/register}" method="post">
         <input type="hidden" th:field="*{id}"/>
         <h3>Weather register information</h3>
+        <h4>For now, leave this field empty</h4>
         <label>Register Date</label>
-        <input type="text" th:field="*{date}" />
+        <input type="text" th:field="*{dateConverter}" />
         <h3>Information about location</h3>
         <table>
             <tr>

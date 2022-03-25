@@ -71,4 +71,9 @@ public class WeatherRegisterServiceImpl implements WeatherRegisterService {
         // savedRegister has the id property
         return weatherRegisterToWeatherRegisterCommand.convert(savedRegister);
     }
+
+    @Override
+    public void deleteById(Long id) {
+        weatherRepository.deleteById(id);
+    }
 }

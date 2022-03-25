@@ -10,4 +10,5 @@ public interface WeatherRegisterService {
     WeatherRegister findById(Long id);
     WeatherRegisterCommand findCommandById(Long id);
     WeatherRegisterCommand saveRegisterCommand(WeatherRegisterCommand registerCommand);
+    void deleteById(Long id);
 }

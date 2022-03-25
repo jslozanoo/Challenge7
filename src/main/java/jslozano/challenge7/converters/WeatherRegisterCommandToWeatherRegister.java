@@ -7,6 +7,8 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+
 @Component
 public class WeatherRegisterCommandToWeatherRegister implements
         Converter<WeatherRegisterCommand, WeatherRegister> {
@@ -28,7 +30,7 @@ public class WeatherRegisterCommandToWeatherRegister implements
         }
         final WeatherRegister register = new WeatherRegister();
         register.setId(source.getId());
-        register.setDate(source.getDate());
+        register.setDate(LocalDate.parse(source.getDateConverter()));
         register.setTemperature(this.temperatureConverter.convert(source.getTemperature()));
         register.setLocation(locationConverter.convert(source.getLocation()));
 
