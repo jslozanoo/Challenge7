@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather register form</title>
+</head>
+<body>
+    <form th:object="${register}" th:action="@{/register}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <h3>Weather register information</h3>
+        <label>Register Date</label>
+        <input type="text" th:field="*{date}" />
+        <h3>Information about location</h3>
+        <table>
+            <tr>
+                <td>
+                    <label>Latitude</label>
+                    <input type="text" th:field="*{location.lat}"/>
+                </td>
+                <td>
+                    <label>Longitude</label>
+                    <input type="text" th:field="*{location.lon}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>City</label>
+                    <input type="text" th:field="*{location.city}"/>
+                </td>
+                <td>
+                    <label>State</label>
+                    <input type="text" th:field="*{location.state}"/>
+                </td>
+            </tr>
+        </table>
+        <h3>Temperatures</h3>
+        <table>
+            <tr>
+                <td>
+                    <label>Temperature 1</label>
+                    <input type="text" th:field="*{temperature.temperature1}" />
+                </td>
+                <td>
+                    <label>Temperature 2</label>
+                    <input type="text" th:field="*{temperature.temperature2}" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Temperature 3</label>
+                    <input type="text" th:field="*{temperature.temperature3}" />
+                </td>
+                <td>
+                    <label>Temperature 4</label>
+                    <input type="text" th:field="*{temperature.temperature4}" />
+                </td>
+            </tr>
+
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
